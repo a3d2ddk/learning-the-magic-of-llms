@@ -11,7 +11,12 @@
   },
   "last_frontier_check": null,
   "baselines": {},
-  "next_session_notes": [],
+  "next_session_notes": [
+    "GitHub is not connected yet. Ask for the repo URL and visibility, then do references/setup.md steps 2 and 3.",
+    "Phase 0 notebook sources exist in notebooks/src but are not built; build needs github_url. Build with: build_notebook.py notebooks/src/setup-roundtrip.py (CPU) and refresher-diagnostic.py (CPU).",
+    "First real Colab run must confirm three untested things: clone cell works, outputs survive Save a copy in GitHub, solution hash in receipt matches. Record quirks in LEARNER.md.",
+    "Local machine has an SSH key but no gh CLI and no git credential helper: use an SSH remote for pushing."
+  ],
   "phases": [
     {
       "id": "p0",

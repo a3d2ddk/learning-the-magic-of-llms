@@ -10,7 +10,10 @@ _Rendered from `state.json` on 2026-11-16. Do not edit by hand._
 
 ## Notes for next session
 
-- none
+- GitHub is not connected yet. Ask for the repo URL and visibility, then do references/setup.md steps 2 and 3.
+- Phase 0 notebook sources exist in notebooks/src but are not built; build needs github_url. Build with: build_notebook.py notebooks/src/setup-roundtrip.py (CPU) and refresher-diagnostic.py (CPU).
+- First real Colab run must confirm three untested things: clone cell works, outputs survive Save a copy in GitHub, solution hash in receipt matches. Record quirks in LEARNER.md.
+- Local machine has an SSH key but no gh CLI and no git credential helper: use an SSH remote for pushing.
 
 ## Lessons
 
@@ -144,3 +147,7 @@ Deepest rung owned, per component: R0: 32 · R1: 0 · R2: 0 · R3: 0 · R4: 0
 | speculative-decoding | library assisted generation | — | R1 (`distillation-and-speculative-decoding`) |  |
 | constrained-decoding | library structured-output engines | — | R1 (`constrained-decoding`) |  |
 | evaluation-harness | library evaluation harnesses | — | R1 (`evaluation`) |  |
+
+## Recent sessions
+
+- `sessions/2026-11-16-01.md`
