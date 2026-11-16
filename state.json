@@ -1,0 +1,956 @@
+{
+  "schema": 1,
+  "created": "2026-11-16",
+  "config": {
+    "github_url": null,
+    "branch": "main",
+    "repo_visibility": null,
+    "push_ok": false,
+    "compute_default": "t4",
+    "frontier_check_days": 30
+  },
+  "last_frontier_check": null,
+  "baselines": {},
+  "next_session_notes": [],
+  "phases": [
+    {
+      "id": "p0",
+      "title": "Setup and refresher (R0)"
+    },
+    {
+      "id": "p1",
+      "title": "A whole LLM with libraries (R0)"
+    },
+    {
+      "id": "p2",
+      "title": "Own the architecture (R1)"
+    },
+    {
+      "id": "p3",
+      "title": "Own the components (R2)"
+    },
+    {
+      "id": "p4",
+      "title": "Own the engine (R3)"
+    },
+    {
+      "id": "p5",
+      "title": "Text and images (R1, with descents)"
+    },
+    {
+      "id": "p6",
+      "title": "Modern training, adaptation, and inference (R1)"
+    },
+    {
+      "id": "p7",
+      "title": "Pure Python and capstones (R4)"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "setup-roundtrip",
+      "status": "planned",
+      "title": "Prove the Colab and GitHub loop",
+      "phase": "p0",
+      "rung": "R0",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": []
+    },
+    {
+      "id": "refresher-diagnostic",
+      "status": "planned",
+      "title": "Find out what needs refreshing",
+      "phase": "p0",
+      "rung": "R0",
+      "track": "ladder",
+      "kind": "diagnostic",
+      "deps": [
+        "setup-roundtrip"
+      ]
+    },
+    {
+      "id": "refresher-capsules",
+      "status": "planned",
+      "title": "Targeted refresher",
+      "phase": "p0",
+      "rung": "R0",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "refresher-diagnostic"
+      ]
+    },
+    {
+      "id": "modern-stack-map",
+      "status": "planned",
+      "title": "Map of a current LLM system",
+      "phase": "p0",
+      "rung": "R0",
+      "track": "ladder",
+      "kind": "discussion",
+      "deps": [
+        "refresher-diagnostic"
+      ]
+    },
+    {
+      "id": "baseline-hf-train",
+      "status": "planned",
+      "title": "Train spine-tiny end to end with libraries",
+      "phase": "p1",
+      "rung": "R0",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "setup-roundtrip"
+      ]
+    },
+    {
+      "id": "pretrained-anatomy",
+      "status": "planned",
+      "title": "Dissect two pretrained models",
+      "phase": "p1",
+      "rung": "R0",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "baseline-hf-train"
+      ]
+    },
+    {
+      "id": "gpt2-in-torch-nn",
+      "status": "planned",
+      "title": "GPT-2 in your own modules, checked against real weights",
+      "phase": "p2",
+      "rung": "R1",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "pretrained-anatomy"
+      ]
+    },
+    {
+      "id": "spine-in-torch-nn",
+      "status": "planned",
+      "title": "Train the spine with your own model and loop",
+      "phase": "p2",
+      "rung": "R1",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "gpt2-in-torch-nn"
+      ]
+    },
+    {
+      "id": "modern-block",
+      "status": "planned",
+      "title": "RMSNorm, rotary positions, SwiGLU, grouped-query attention",
+      "phase": "p2",
+      "rung": "R1",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "spine-in-torch-nn"
+      ]
+    },
+    {
+      "id": "sampling-and-decoding",
+      "status": "planned",
+      "title": "Turning logits into text",
+      "phase": "p2",
+      "rung": "R1",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "gpt2-in-torch-nn"
+      ]
+    },
+    {
+      "id": "kv-cache",
+      "status": "planned",
+      "title": "Incremental decoding",
+      "phase": "p2",
+      "rung": "R1",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "modern-block",
+        "sampling-and-decoding"
+      ]
+    },
+    {
+      "id": "layers-from-tensors",
+      "status": "planned",
+      "title": "Parameters, modules, and basic layers",
+      "phase": "p3",
+      "rung": "R2",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "modern-block"
+      ]
+    },
+    {
+      "id": "losses-and-numerics",
+      "status": "planned",
+      "title": "Softmax, cross-entropy, and floating point",
+      "phase": "p3",
+      "rung": "R2",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "layers-from-tensors"
+      ]
+    },
+    {
+      "id": "attention-from-tensors",
+      "status": "planned",
+      "title": "Attention from raw tensor operations",
+      "phase": "p3",
+      "rung": "R2",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "layers-from-tensors",
+        "losses-and-numerics"
+      ]
+    },
+    {
+      "id": "optimizers",
+      "status": "planned",
+      "title": "SGD, Adam, AdamW",
+      "phase": "p3",
+      "rung": "R2",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "layers-from-tensors"
+      ]
+    },
+    {
+      "id": "schedules-and-stability",
+      "status": "planned",
+      "title": "Learning-rate schedules and keeping training stable",
+      "phase": "p3",
+      "rung": "R2",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "optimizers"
+      ]
+    },
+    {
+      "id": "bpe-tokenizer",
+      "status": "planned",
+      "title": "Byte-level BPE from scratch",
+      "phase": "p3",
+      "rung": "R2",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "baseline-hf-train"
+      ]
+    },
+    {
+      "id": "data-pipeline",
+      "status": "planned",
+      "title": "From text to batches",
+      "phase": "p3",
+      "rung": "R2",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "bpe-tokenizer"
+      ]
+    },
+    {
+      "id": "spine-r2",
+      "status": "planned",
+      "title": "The spine on your own components",
+      "phase": "p3",
+      "rung": "R2",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "attention-from-tensors",
+        "schedules-and-stability",
+        "data-pipeline"
+      ]
+    },
+    {
+      "id": "training-at-scale-concepts",
+      "status": "planned",
+      "title": "What changes at real scale",
+      "phase": "p3",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "spine-in-torch-nn"
+      ]
+    },
+    {
+      "id": "scalar-autograd",
+      "status": "planned",
+      "title": "Reverse-mode differentiation on scalars",
+      "phase": "p4",
+      "rung": "R3",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "refresher-diagnostic"
+      ]
+    },
+    {
+      "id": "tensor-autograd",
+      "status": "planned",
+      "title": "A tensor autograd engine on NumPy",
+      "phase": "p4",
+      "rung": "R3",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "scalar-autograd",
+        "losses-and-numerics"
+      ]
+    },
+    {
+      "id": "engine-nn-port",
+      "status": "planned",
+      "title": "Layers, attention, and optimiser on your engine",
+      "phase": "p4",
+      "rung": "R3",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "tensor-autograd",
+        "spine-r2"
+      ]
+    },
+    {
+      "id": "spine-r3",
+      "status": "planned",
+      "title": "Train a transformer with no PyTorch",
+      "phase": "p4",
+      "rung": "R3",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "engine-nn-port"
+      ]
+    },
+    {
+      "id": "under-the-engine",
+      "status": "planned",
+      "title": "What NumPy and PyTorch do underneath",
+      "phase": "p4",
+      "rung": "R3",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "tensor-autograd"
+      ]
+    },
+    {
+      "id": "shapes-dataset",
+      "status": "planned",
+      "title": "A generated image, caption, and question dataset",
+      "phase": "p5",
+      "rung": "R4",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "setup-roundtrip"
+      ]
+    },
+    {
+      "id": "vit-classifier",
+      "status": "planned",
+      "title": "A vision transformer",
+      "phase": "p5",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "modern-block"
+      ]
+    },
+    {
+      "id": "contrastive-alignment",
+      "status": "planned",
+      "title": "Aligning images and text",
+      "phase": "p5",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "vit-classifier",
+        "shapes-dataset"
+      ]
+    },
+    {
+      "id": "vlm-projector",
+      "status": "planned",
+      "title": "A vision-language model by projection",
+      "phase": "p5",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "contrastive-alignment",
+        "kv-cache"
+      ]
+    },
+    {
+      "id": "vlm-alternatives",
+      "status": "planned",
+      "title": "Other ways to connect vision and language",
+      "phase": "p5",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "vlm-projector"
+      ]
+    },
+    {
+      "id": "image-tokens-early-fusion",
+      "status": "planned",
+      "title": "Images as tokens in one sequence",
+      "phase": "p5",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "vlm-projector"
+      ]
+    },
+    {
+      "id": "vision-descent",
+      "status": "planned",
+      "title": "The vision path down the ladder",
+      "phase": "p5",
+      "rung": "R3",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "vit-classifier",
+        "tensor-autograd"
+      ]
+    },
+    {
+      "id": "instruction-tuning",
+      "status": "planned",
+      "title": "Chat templates and supervised fine-tuning",
+      "phase": "p6",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "modern-block",
+        "bpe-tokenizer"
+      ]
+    },
+    {
+      "id": "lora-by-hand",
+      "status": "planned",
+      "title": "Low-rank adaptation",
+      "phase": "p6",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "instruction-tuning"
+      ]
+    },
+    {
+      "id": "quantization",
+      "status": "planned",
+      "title": "Smaller numbers",
+      "phase": "p6",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "spine-in-torch-nn"
+      ]
+    },
+    {
+      "id": "preference-tuning",
+      "status": "planned",
+      "title": "Learning from comparisons",
+      "phase": "p6",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "instruction-tuning"
+      ]
+    },
+    {
+      "id": "reasoning-and-test-time-compute",
+      "status": "planned",
+      "title": "Thinking before answering",
+      "phase": "p6",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "spine-in-torch-nn",
+        "sampling-and-decoding"
+      ]
+    },
+    {
+      "id": "mixture-of-experts",
+      "status": "planned",
+      "title": "Sparse feed-forward layers",
+      "phase": "p6",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "modern-block"
+      ]
+    },
+    {
+      "id": "long-context",
+      "status": "planned",
+      "title": "Position schemes beyond the training length",
+      "phase": "p6",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "kv-cache"
+      ]
+    },
+    {
+      "id": "architecture-frontier",
+      "status": "planned",
+      "title": "Two recent ideas, chosen when you get here",
+      "phase": "p6",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "mixture-of-experts",
+        "long-context"
+      ]
+    },
+    {
+      "id": "distillation-and-speculative-decoding",
+      "status": "planned",
+      "title": "Small models helping large ones",
+      "phase": "p6",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "kv-cache"
+      ]
+    },
+    {
+      "id": "constrained-decoding",
+      "status": "planned",
+      "title": "Guaranteed structure in the output",
+      "phase": "p6",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "sampling-and-decoding",
+        "bpe-tokenizer"
+      ]
+    },
+    {
+      "id": "evaluation",
+      "status": "planned",
+      "title": "Measuring a language model",
+      "phase": "p6",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "notebook",
+      "deps": [
+        "spine-in-torch-nn"
+      ]
+    },
+    {
+      "id": "inference-serving-concepts",
+      "status": "planned",
+      "title": "How models are served",
+      "phase": "p6",
+      "rung": "R1",
+      "track": "breadth",
+      "kind": "discussion",
+      "deps": [
+        "kv-cache",
+        "quantization"
+      ]
+    },
+    {
+      "id": "ndarray-pure-python",
+      "status": "planned",
+      "title": "Your own n-dimensional array",
+      "phase": "p7",
+      "rung": "R4",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "under-the-engine",
+        "spine-r3"
+      ]
+    },
+    {
+      "id": "engine-r4-port",
+      "status": "planned",
+      "title": "Autograd and layers on your array",
+      "phase": "p7",
+      "rung": "R4",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "ndarray-pure-python"
+      ]
+    },
+    {
+      "id": "io-and-tokenizer-r4",
+      "status": "planned",
+      "title": "Files, checkpoints, tokenizer, and images",
+      "phase": "p7",
+      "rung": "R4",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "engine-r4-port",
+        "vision-descent"
+      ]
+    },
+    {
+      "id": "capstone-text",
+      "status": "planned",
+      "title": "A language model on the standard library alone",
+      "phase": "p7",
+      "rung": "R4",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "io-and-tokenizer-r4"
+      ]
+    },
+    {
+      "id": "capstone-multimodal",
+      "status": "planned",
+      "title": "A text and image model on the standard library alone",
+      "phase": "p7",
+      "rung": "R4",
+      "track": "ladder",
+      "kind": "notebook",
+      "deps": [
+        "capstone-text",
+        "vlm-projector"
+      ]
+    },
+    {
+      "id": "retrospective",
+      "status": "planned",
+      "title": "From your code to production code",
+      "phase": "p7",
+      "rung": "R4",
+      "track": "ladder",
+      "kind": "discussion",
+      "deps": [
+        "capstone-multimodal"
+      ]
+    }
+  ],
+  "ladder": [
+    {
+      "component": "model-architecture",
+      "library": "transformers model classes (GPT-2, Llama family)",
+      "plan": {
+        "R1": "gpt2-in-torch-nn",
+        "R2": "attention-from-tensors",
+        "R3": "engine-nn-port",
+        "R4": "engine-r4-port"
+      },
+      "owned": []
+    },
+    {
+      "component": "modern-block",
+      "library": "transformers Llama blocks: RMSNorm, RoPE, SwiGLU, GQA",
+      "plan": {
+        "R1": "modern-block",
+        "R2": "attention-from-tensors",
+        "R3": "engine-nn-port",
+        "R4": "engine-r4-port"
+      },
+      "owned": []
+    },
+    {
+      "component": "training-loop",
+      "library": "transformers.Trainer / reference loop",
+      "plan": {
+        "R1": "spine-in-torch-nn",
+        "R3": "spine-r3",
+        "R4": "capstone-text"
+      },
+      "owned": []
+    },
+    {
+      "component": "sampling",
+      "library": "model.generate, logits processors",
+      "plan": {
+        "R1": "sampling-and-decoding",
+        "R4": "capstone-text"
+      },
+      "owned": []
+    },
+    {
+      "component": "kv-cache",
+      "library": "transformers past_key_values",
+      "plan": {
+        "R1": "kv-cache",
+        "R4": "capstone-text"
+      },
+      "owned": []
+    },
+    {
+      "component": "module-system",
+      "library": "torch.nn.Module, Parameter, state_dict",
+      "plan": {
+        "R2": "layers-from-tensors",
+        "R3": "engine-nn-port",
+        "R4": "engine-r4-port"
+      },
+      "owned": []
+    },
+    {
+      "component": "basic-layers",
+      "library": "torch.nn.Linear, Embedding, LayerNorm, Dropout, activations",
+      "plan": {
+        "R2": "layers-from-tensors",
+        "R3": "engine-nn-port",
+        "R4": "engine-r4-port"
+      },
+      "owned": []
+    },
+    {
+      "component": "init-and-rng",
+      "library": "torch.nn.init, torch.manual_seed",
+      "plan": {
+        "R2": "layers-from-tensors",
+        "R4": "engine-r4-port"
+      },
+      "owned": []
+    },
+    {
+      "component": "softmax-cross-entropy",
+      "library": "torch.nn.functional.softmax, cross_entropy",
+      "plan": {
+        "R2": "losses-and-numerics",
+        "R3": "tensor-autograd",
+        "R4": "engine-r4-port"
+      },
+      "owned": []
+    },
+    {
+      "component": "attention",
+      "library": "torch.nn.functional.scaled_dot_product_attention",
+      "plan": {
+        "R2": "attention-from-tensors",
+        "R3": "engine-nn-port",
+        "R4": "engine-r4-port"
+      },
+      "owned": []
+    },
+    {
+      "component": "optimizer",
+      "library": "torch.optim.AdamW",
+      "plan": {
+        "R2": "optimizers",
+        "R3": "engine-nn-port",
+        "R4": "engine-r4-port"
+      },
+      "owned": []
+    },
+    {
+      "component": "schedule-and-clipping",
+      "library": "torch.optim.lr_scheduler, clip_grad_norm_",
+      "plan": {
+        "R2": "schedules-and-stability",
+        "R3": "engine-nn-port",
+        "R4": "engine-r4-port"
+      },
+      "owned": []
+    },
+    {
+      "component": "tokenizer",
+      "library": "tokenizers, tiktoken",
+      "plan": {
+        "R2": "bpe-tokenizer",
+        "R4": "io-and-tokenizer-r4"
+      },
+      "owned": []
+    },
+    {
+      "component": "data-pipeline",
+      "library": "datasets, torch.utils.data",
+      "plan": {
+        "R2": "data-pipeline",
+        "R4": "io-and-tokenizer-r4"
+      },
+      "owned": []
+    },
+    {
+      "component": "autograd",
+      "library": "torch.autograd",
+      "plan": {
+        "R3": "tensor-autograd",
+        "R4": "engine-r4-port"
+      },
+      "owned": []
+    },
+    {
+      "component": "ndarray",
+      "library": "torch.Tensor, numpy.ndarray",
+      "plan": {
+        "R4": "ndarray-pure-python"
+      },
+      "owned": []
+    },
+    {
+      "component": "checkpoint-io",
+      "library": "torch.save, safetensors, numpy.save",
+      "plan": {
+        "R4": "io-and-tokenizer-r4"
+      },
+      "owned": []
+    },
+    {
+      "component": "vision-encoder",
+      "library": "library ViT classes",
+      "plan": {
+        "R1": "vit-classifier",
+        "R3": "vision-descent",
+        "R4": "capstone-multimodal"
+      },
+      "owned": []
+    },
+    {
+      "component": "patch-embedding",
+      "library": "torch.nn.Conv2d",
+      "plan": {
+        "R1": "vit-classifier",
+        "R3": "vision-descent",
+        "R4": "capstone-multimodal"
+      },
+      "owned": []
+    },
+    {
+      "component": "image-decoding",
+      "library": "PIL, torchvision",
+      "plan": {
+        "R3": "vision-descent",
+        "R4": "io-and-tokenizer-r4"
+      },
+      "owned": []
+    },
+    {
+      "component": "image-text-dataset",
+      "library": "downloaded captioned image datasets",
+      "plan": {
+        "R4": "shapes-dataset"
+      },
+      "owned": []
+    },
+    {
+      "component": "contrastive-loss",
+      "library": "library CLIP / SigLIP training code",
+      "plan": {
+        "R1": "contrastive-alignment"
+      },
+      "owned": []
+    },
+    {
+      "component": "vlm-connector",
+      "library": "library vision-language model classes",
+      "plan": {
+        "R1": "vlm-projector",
+        "R4": "capstone-multimodal"
+      },
+      "owned": []
+    },
+    {
+      "component": "image-tokenizer",
+      "library": "library VQ image tokenizers",
+      "plan": {
+        "R1": "image-tokens-early-fusion"
+      },
+      "owned": []
+    },
+    {
+      "component": "chat-template",
+      "library": "tokenizer.apply_chat_template",
+      "plan": {
+        "R1": "instruction-tuning"
+      },
+      "owned": []
+    },
+    {
+      "component": "lora",
+      "library": "peft",
+      "plan": {
+        "R1": "lora-by-hand"
+      },
+      "owned": []
+    },
+    {
+      "component": "quantization",
+      "library": "bitsandbytes and similar",
+      "plan": {
+        "R1": "quantization"
+      },
+      "owned": []
+    },
+    {
+      "component": "preference-tuning",
+      "library": "library DPO trainers",
+      "plan": {
+        "R1": "preference-tuning"
+      },
+      "owned": []
+    },
+    {
+      "component": "mixture-of-experts",
+      "library": "library MoE layers",
+      "plan": {
+        "R1": "mixture-of-experts"
+      },
+      "owned": []
+    },
+    {
+      "component": "speculative-decoding",
+      "library": "library assisted generation",
+      "plan": {
+        "R1": "distillation-and-speculative-decoding"
+      },
+      "owned": []
+    },
+    {
+      "component": "constrained-decoding",
+      "library": "library structured-output engines",
+      "plan": {
+        "R1": "constrained-decoding"
+      },
+      "owned": []
+    },
+    {
+      "component": "evaluation-harness",
+      "library": "library evaluation harnesses",
+      "plan": {
+        "R1": "evaluation"
+      },
+      "owned": []
+    }
+  ]
+}
