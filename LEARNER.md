@@ -16,6 +16,7 @@ Read at the start of every session. Keep it short and current; replace stale lin
 
 ## Weak spots to revisit
 - Tends to answer "what should this return" instead of tracing own code; ask trace questions. Justifies by restating claims; push for the derivation.
+- Under a failing case, patches the specific symptom (special-case branches) instead of fixing the root cause; ask "what invariant should hold?" and test the same case reordered.
 
 ## How to run sessions
 - (pace, scaffold level adjustments, preferences that emerge)
