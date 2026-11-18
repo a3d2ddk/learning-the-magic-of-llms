@@ -11,10 +11,9 @@ _Rendered from `state.json` on 2026-11-18. Do not edit by hand._
 
 ## Notes for next session
 
-- GitHub is not connected yet. Ask for the repo URL and visibility, then do references/setup.md steps 2 and 3.
-- Phase 0 notebook sources exist in notebooks/src but are not built; build needs github_url. Build with: build_notebook.py notebooks/src/setup-roundtrip.py (CPU) and refresher-diagnostic.py (CPU).
-- First real Colab run must confirm three untested things: clone cell works, outputs survive Save a copy in GitHub, solution hash in receipt matches. Record quirks in LEARNER.md.
-- Local machine has an SSH key but no gh CLI and no git credential helper: use an SSH remote for pushing.
+- Push/pull via scripts/git_sync.py (token.txt, git-ignored, HTTPS remote). Verified working 2026-11-18.
+- setup-roundtrip issued and pushed; waiting on learner's Colab run. On submission, confirm: clone cell worked, outputs survived Save a copy in GitHub, solution hash matches. Record quirks in LEARNER.md.
+- Next: issue refresher-diagnostic (already built). Frontier check still due before modern-stack-map.
 
 ## Lessons
 

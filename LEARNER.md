@@ -21,4 +21,4 @@ Read at the start of every session. Keep it short and current; replace stale lin
 - (pace, scaffold level adjustments, preferences that emerge)
 
 ## Colab and GitHub quirks found
-- (anything that broke in the round trip and how it was fixed)
+- Local pushes: GitHub fine-grained PAT in git-ignored `token.txt`, used by `git_sync.py`. SSH key not registered on GitHub.
