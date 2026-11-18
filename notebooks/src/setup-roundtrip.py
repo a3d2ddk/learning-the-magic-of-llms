@@ -69,7 +69,8 @@ ck.close("softmax_large_inputs", lambda: softmax([1000.0, 1001.0]),
 # Every exponent should stay <= 0 once you subtract the right value, so none of these should crash.
 ck.close("softmax_neg_then_zero", lambda: softmax([-1000.0, 0.0]), [0.0, 1.0], tol=1e-12)
 ck.close("softmax_zero_then_neg", lambda: softmax([0.0, -1000.0]), [1.0, 0.0], tol=1e-12)
-ck.close("softmax_near_limit", lambda: softmax([0.0, -705.0]), [1.0, math.exp(-705.0)], tol=1e-12)
+ck.close("softmax_near_limit", lambda: softmax([0.0, -705.0]),
+         [1 / (1 + math.exp(-705.0)), math.exp(-705.0) / (1 + math.exp(-705.0))], tol=1e-12)
 ck.close("softmax_all_negative", lambda: softmax([-1000.0, -1001.0]),
          [math.e / (1 + math.e), 1 / (1 + math.e)], tol=1e-12)
 ck.close("softmax_two_big_ties", lambda: softmax([1000.0, -5.0, 1000.0]), [0.5, 0.0, 0.5], tol=1e-12)

@@ -4,31 +4,30 @@ _Rendered from `state.json` on 2026-11-18. Do not edit by hand._
 
 ## Where you are
 
-- **Lessons done:** 0 of 50 (0 verified, 0 skipped)
+- **Lessons done:** 1 of 50 (1 verified, 0 skipped)
 - **In progress:**
-  - `setup-roundtrip` Prove the Colab and GitHub loop: **needs-rework** (mean: 'sum, i = 0.0' unpack error. softmax shifts by max-|x| element (wrong value for e.g. [-1000,0]); asked as question. Re-run with Run all.)
+  - `refresher-diagnostic` Find out what needs refreshing: **issued**
+- **Next up:** `baseline-hf-train` Train spine-tiny end to end with libraries (R0, ladder)
+- **Also available now:** `shapes-dataset`
 - **Frontier check:** due (never run)
 
 ## Notes for next session
 
-- Push/pull via scripts/git_sync.py (token.txt, git-ignored, HTTPS remote). Verified working 2026-11-18.
-- setup-roundtrip issued and pushed; waiting on learner's Colab run. On submission, confirm: clone cell worked, outputs survived Save a copy in GitHub, solution hash matches. Record quirks in LEARNER.md.
-- Next: issue refresher-diagnostic (already built). Frontier check still due before modern-stack-map.
-- setup-roundtrip needs-rework: awaiting fixed mean + learner's answer on softmax [-1000,0] question.
-- Check gap: setup-roundtrip softmax checks miss mixed-sign large inputs; add softmax([-1000,0]) check to notebook source.
-- Learner may say their solution changed when the saved hash shows it did not; compare hashes and say so plainly.
-- After setup-roundtrip verified: rewrite softmax_near_limit expected as exact formula [1/(1+e^-705), e^-705/(1+e^-705)] in src and notebook.
+- Push/pull via scripts/git_sync.py (token.txt, git-ignored, HTTPS remote).
+- setup-roundtrip verified 2026-11-18. refresher-diagnostic issued; on submission: record self-ratings, background and per-capsule results in LEARNER.md, then choose capsules for refresher-capsules.
+- Add new test cases as notebook checks (rebuild, keep learner's solution cell), not as prose. Learner prefers this.
+- Frontier check still due; run while preparing modern-stack-map.
 
 ## Lessons
 
 Key: ✓ verified · – skipped · ⧗ submitted · → issued · ↺ needs rework · · planned
 
-### p0 · Setup and refresher (R0): 0/4
+### p0 · Setup and refresher (R0): 1/4
 
 | | Lesson | Rung | Track | Kind | Status | Date |
 |---|---|---|---|---|---|---|
-| ↺ | `setup-roundtrip` Prove the Colab and GitHub loop | R0 | ladder | notebook | needs-rework | 2026-11-18 |
-| · | `refresher-diagnostic` Find out what needs refreshing | R0 | ladder | diagnostic | planned |  |
+| ✓ | `setup-roundtrip` Prove the Colab and GitHub loop | R0 | ladder | notebook | verified | 2026-11-18 |
+| → | `refresher-diagnostic` Find out what needs refreshing | R0 | ladder | diagnostic | issued | 2026-11-18 |
 | · | `refresher-capsules` Targeted refresher | R0 | ladder | notebook | planned |  |
 | · | `modern-stack-map` Map of a current LLM system | R0 | ladder | discussion | planned |  |
 
