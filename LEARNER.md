@@ -15,7 +15,7 @@ Read at the start of every session. Keep it short and current; replace stale lin
 - (from diagnostic and sessions)
 
 ## Weak spots to revisit
-- (from diagnostic and sessions)
+- Tends to answer "what should this return" instead of tracing own code; ask trace questions. Justifies by restating claims; push for the derivation.
 
 ## How to run sessions
 - (pace, scaffold level adjustments, preferences that emerge)
