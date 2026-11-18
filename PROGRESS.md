@@ -5,7 +5,8 @@ _Rendered from `state.json` on 2026-11-18. Do not edit by hand._
 ## Where you are
 
 - **Lessons done:** 0 of 50 (0 verified, 0 skipped)
-- **Next up:** `setup-roundtrip` Prove the Colab and GitHub loop (R0, ladder)
+- **In progress:**
+  - `setup-roundtrip` Prove the Colab and GitHub loop: **issued** (built 2026-11-18; push from local blocked until SSH key added)
 - **Frontier check:** due (never run)
 
 ## Notes for next session
@@ -23,7 +24,7 @@ Key: ✓ verified · – skipped · ⧗ submitted · → issued · ↺ needs rew
 
 | | Lesson | Rung | Track | Kind | Status | Date |
 |---|---|---|---|---|---|---|
-| · | `setup-roundtrip` Prove the Colab and GitHub loop | R0 | ladder | notebook | planned |  |
+| → | `setup-roundtrip` Prove the Colab and GitHub loop | R0 | ladder | notebook | issued | 2026-11-18 |
 | · | `refresher-diagnostic` Find out what needs refreshing | R0 | ladder | diagnostic | planned |  |
 | · | `refresher-capsules` Targeted refresher | R0 | ladder | notebook | planned |  |
 | · | `modern-stack-map` Map of a current LLM system | R0 | ladder | discussion | planned |  |

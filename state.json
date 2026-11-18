@@ -54,13 +54,15 @@
   "lessons": [
     {
       "id": "setup-roundtrip",
-      "status": "planned",
+      "status": "issued",
       "title": "Prove the Colab and GitHub loop",
       "phase": "p0",
       "rung": "R0",
       "track": "ladder",
       "kind": "notebook",
-      "deps": []
+      "deps": [],
+      "issued": "2026-11-18",
+      "note": "built 2026-11-18; push from local blocked until SSH key added"
     },
     {
       "id": "refresher-diagnostic",
