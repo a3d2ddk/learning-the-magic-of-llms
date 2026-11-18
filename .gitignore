@@ -9,3 +9,4 @@ data/
 checkpoints/
 state.json.tmp
 .DS_Store
+token.txt
