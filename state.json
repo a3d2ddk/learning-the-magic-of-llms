@@ -2,9 +2,9 @@
   "schema": 1,
   "created": "2026-11-16",
   "config": {
-    "github_url": null,
+    "github_url": "https://github.com/a3d2ddk/learning-the-magic-of-llms",
     "branch": "main",
-    "repo_visibility": null,
+    "repo_visibility": "public",
     "push_ok": false,
     "compute_default": "t4",
     "frontier_check_days": 30

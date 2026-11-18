@@ -1,6 +1,6 @@
 # Progress
 
-_Rendered from `state.json` on 2026-11-16. Do not edit by hand._
+_Rendered from `state.json` on 2026-11-18. Do not edit by hand._
 
 ## Where you are
 
@@ -150,4 +150,5 @@ Deepest rung owned, per component: R0: 32 · R1: 0 · R2: 0 · R3: 0 · R4: 0
 
 ## Recent sessions
 
+- `sessions/2026-11-18-01.md`
 - `sessions/2026-11-16-01.md`
