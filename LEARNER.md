@@ -21,4 +21,5 @@ Read at the start of every session. Keep it short and current; replace stale lin
 - (pace, scaffold level adjustments, preferences that emerge)
 
 ## Colab and GitHub quirks found
+- Round trip confirmed 2026-11-18: clone cell works, outputs survive "Save a copy in GitHub", solution hash matches. Colab gave CPU runtime (python 3.13, torch cpu).
 - Local pushes: GitHub fine-grained PAT in git-ignored `token.txt`, used by `git_sync.py`. SSH key not registered on GitHub.

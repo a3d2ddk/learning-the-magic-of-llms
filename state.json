@@ -14,7 +14,8 @@
   "next_session_notes": [
     "Push/pull via scripts/git_sync.py (token.txt, git-ignored, HTTPS remote). Verified working 2026-11-18.",
     "setup-roundtrip issued and pushed; waiting on learner's Colab run. On submission, confirm: clone cell worked, outputs survived Save a copy in GitHub, solution hash matches. Record quirks in LEARNER.md.",
-    "Next: issue refresher-diagnostic (already built). Frontier check still due before modern-stack-map."
+    "Next: issue refresher-diagnostic (already built). Frontier check still due before modern-stack-map.",
+    "setup-roundtrip needs-rework: awaiting fixed mean + learner's answer on softmax [-1000,0] question."
   ],
   "phases": [
     {
@@ -53,7 +54,7 @@
   "lessons": [
     {
       "id": "setup-roundtrip",
-      "status": "issued",
+      "status": "needs-rework",
       "title": "Prove the Colab and GitHub loop",
       "phase": "p0",
       "rung": "R0",
@@ -61,7 +62,7 @@
       "kind": "notebook",
       "deps": [],
       "issued": "2026-11-18",
-      "note": "built 2026-11-18; push from local blocked until SSH key added"
+      "note": "mean: 'sum, i = 0.0' unpack error. softmax shifts by max-|x| element (wrong value for e.g. [-1000,0]); asked as question. Re-run with Run all."
     },
     {
       "id": "refresher-diagnostic",

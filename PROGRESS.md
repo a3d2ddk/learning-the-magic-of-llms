@@ -6,7 +6,7 @@ _Rendered from `state.json` on 2026-11-18. Do not edit by hand._
 
 - **Lessons done:** 0 of 50 (0 verified, 0 skipped)
 - **In progress:**
-  - `setup-roundtrip` Prove the Colab and GitHub loop: **issued** (built 2026-11-18; push from local blocked until SSH key added)
+  - `setup-roundtrip` Prove the Colab and GitHub loop: **needs-rework** (mean: 'sum, i = 0.0' unpack error. softmax shifts by max-|x| element (wrong value for e.g. [-1000,0]); asked as question. Re-run with Run all.)
 - **Frontier check:** due (never run)
 
 ## Notes for next session
@@ -14,6 +14,7 @@ _Rendered from `state.json` on 2026-11-18. Do not edit by hand._
 - Push/pull via scripts/git_sync.py (token.txt, git-ignored, HTTPS remote). Verified working 2026-11-18.
 - setup-roundtrip issued and pushed; waiting on learner's Colab run. On submission, confirm: clone cell worked, outputs survived Save a copy in GitHub, solution hash matches. Record quirks in LEARNER.md.
 - Next: issue refresher-diagnostic (already built). Frontier check still due before modern-stack-map.
+- setup-roundtrip needs-rework: awaiting fixed mean + learner's answer on softmax [-1000,0] question.
 
 ## Lessons
 
@@ -23,7 +24,7 @@ Key: ✓ verified · – skipped · ⧗ submitted · → issued · ↺ needs rew
 
 | | Lesson | Rung | Track | Kind | Status | Date |
 |---|---|---|---|---|---|---|
-| → | `setup-roundtrip` Prove the Colab and GitHub loop | R0 | ladder | notebook | issued | 2026-11-18 |
+| ↺ | `setup-roundtrip` Prove the Colab and GitHub loop | R0 | ladder | notebook | needs-rework | 2026-11-18 |
 | · | `refresher-diagnostic` Find out what needs refreshing | R0 | ladder | diagnostic | planned |  |
 | · | `refresher-capsules` Targeted refresher | R0 | ladder | notebook | planned |  |
 | · | `modern-stack-map` Map of a current LLM system | R0 | ladder | discussion | planned |  |
