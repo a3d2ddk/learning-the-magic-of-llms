@@ -16,6 +16,7 @@ _Rendered from `state.json` on 2026-11-18. Do not edit by hand._
 - Next: issue refresher-diagnostic (already built). Frontier check still due before modern-stack-map.
 - setup-roundtrip needs-rework: awaiting fixed mean + learner's answer on softmax [-1000,0] question.
 - Check gap: setup-roundtrip softmax checks miss mixed-sign large inputs; add softmax([-1000,0]) check to notebook source.
+- Learner may say their solution changed when the saved hash shows it did not; compare hashes and say so plainly.
 
 ## Lessons
 

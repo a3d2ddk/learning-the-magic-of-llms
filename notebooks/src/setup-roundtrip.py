@@ -64,6 +64,18 @@ ck.close("softmax_sums_to_one", lambda: sum(softmax([0.3, -1.2, 2.0, 0.0])), 1.0
 ck.close("softmax_large_inputs", lambda: softmax([1000.0, 1001.0]),
          [1 / (1 + math.e), math.e / (1 + math.e)], tol=1e-12)
 
+# %% [check] softmax_stability
+# Large magnitudes in both orders, mixed signs, all-negative, and several tied extremes.
+# Every exponent should stay <= 0 once you subtract the right value, so none of these should crash.
+ck.close("softmax_neg_then_zero", lambda: softmax([-1000.0, 0.0]), [0.0, 1.0], tol=1e-12)
+ck.close("softmax_zero_then_neg", lambda: softmax([0.0, -1000.0]), [1.0, 0.0], tol=1e-12)
+ck.close("softmax_near_limit", lambda: softmax([0.0, -705.0]), [1.0, math.exp(-705.0)], tol=1e-12)
+ck.close("softmax_all_negative", lambda: softmax([-1000.0, -1001.0]),
+         [math.e / (1 + math.e), 1 / (1 + math.e)], tol=1e-12)
+ck.close("softmax_two_big_ties", lambda: softmax([1000.0, -5.0, 1000.0]), [0.5, 0.0, 0.5], tol=1e-12)
+ck.close("softmax_neg_outlier_first", lambda: softmax([-800.0, 3.0, 1.0]),
+         [0.0, 1 / (1 + math.exp(-2.0)), math.exp(-2.0) / (1 + math.exp(-2.0))], tol=1e-12)
+
 # %% [markdown]
 # ## Save it back
 #

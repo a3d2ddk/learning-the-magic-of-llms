@@ -19,7 +19,7 @@ Read at the start of every session. Keep it short and current; replace stale lin
 - Under a failing case, patches the specific symptom (special-case branches) instead of fixing the root cause; ask "what invariant should hold?" and test the same case reordered.
 
 ## How to run sessions
-- (pace, scaffold level adjustments, preferences that emerge)
+- Wants extra test cases delivered as checks in the notebook (rebuild, keep their solution cell), not described in chat. Run their code locally against new checks first and show the result.
 
 ## Colab and GitHub quirks found
 - Round trip confirmed 2026-11-18: clone cell works, outputs survive "Save a copy in GitHub", solution hash matches. Colab gave CPU runtime (python 3.13, torch cpu).
